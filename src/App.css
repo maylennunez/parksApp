@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  padding: 20px;
+  width: 33%;
+  text-align: center;
+  background: pink;
+  font-size:24px;
+  border: 1px solid black;
+  color: coral;
+  text-decoration: none;
+}

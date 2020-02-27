@@ -11,7 +11,8 @@ class parks extends Component {
         return (
             
             <div>
-               
+                {this.props.ready ? "" : <h2>Loading...</h2>}
+
          {this.props.showParks()} 
             </div>
         );

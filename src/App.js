@@ -50,7 +50,7 @@ class App extends Component {
 
       return <div key={i}>
         
-        <Link to={`/park/${eachPark.id}`}>{eachPark.name} </Link>
+    <Link to={`/park/${eachPark.id}`}>{eachPark.name} </Link>
         
       </div>
     })
@@ -65,22 +65,21 @@ class App extends Component {
 
 
       <div>
-        <Link to="/parks">Parks</Link>
-        {this.state.ready ? "" : <h2>Loading...</h2>}
+        {/* <Link to="/parks">Parks</Link> */}
         <Navbar/>
-        <Firstpage pics={this.state.pics}/>
-        <Home />
+
 
         
-        <Link to="/parks"> </Link>
-        <Link to="/firstPage"> </Link>  
+ 
         {/* {this.state.parks.map(park => {
           return <><Link to={`/${park.id}`}>{park.name}</Link><br/></>
         })} */}
         <Switch>
-          <Route exact path="/parks" render={props => <Parks {...props} showParks={this.showParks} parks={this.state.parks}/>} />
+          <Route exact path="/parks" render={props => <Parks {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready}/>} />
           <Route exact path="/park/:parkdetail" render={props => <ParkDetails {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready}/>} />
-          <Route exact path="/firstPage" render={props => <Firstpage  />} />
+          <Route exact path="/firstPage" render={props => <Firstpage {...props} pics={this.state.parks} />} />
+          <Route exact path="/" render={props => <Home  {...props}/>} />
+
         </Switch>
        
 
