@@ -65,7 +65,7 @@ class App extends Component {
 
 
       <div>
-
+        <Link to="/parks">Parks</Link>
         {this.state.ready ? "" : <h2>Loading...</h2>}
         <Navbar/>
         <Firstpage pics={this.state.pics}/>
