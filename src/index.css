@@ -1,5 +1,5 @@
 body {
-  background-color:rgb(247, 243, 243);
+  background-color:white;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,44 +12,105 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.img-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .img{
   height: 400px;
-  width: 600px;
-  /* margin: 1px; */
-  /* padding: 1px; */
+  width: 49%;
+  /* display: inline-block; */
   
 }
 
+div {
+  margin: auto;
+}
+/* .parks {
+  display: flex;
+  justify-content: center;
+} */
 
-div.gallery {
+.parks .gallery{
+    width: 20vw;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+/* .parks .gallery {
+  width: 180px
+} */
+/* div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
   width: 180px;
-  
 
-}
-
-div.gallery :hover {
-  border: 1px solid #777;
-}
-
-
-div .gallery img{
-flex-wrap: wrap;
-height: auto;
-width: 100%;
-}
-h2 {
-  /* padding: 15px; */
-  text-align: center;
-}
-
-
-/* 
-h2 {
-color: white;
-text-align: justify;
-text-decoration: none;
+ 
 
 } */
+div .gallery img{
+  width: 100%;
+    /* object-fit: contain; */
+
+}
+p{
+  margin: 0px;
+}
+.gallery{
+  margin-bottom: 50px;
+
+}
+
+div .gallery a{
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+}
+div .gallery img{
+flex-wrap: wrap;
+height: 20vw;
+width: 100%;
+padding: 0px 0;
+}
+h2 {
+ 
+  text-align: center;
+  text-decoration: transparent;
+}
+
+nav {
+  display: flex;
+ justify-content: left; 
+  overflow: hidden;
+ background-color: rgb(230, 232, 235);
+ transition: top .4s;
+} 
+
+nav a {
+ 
+ color:rgb(105, 103, 103);
+ text-decoration: none ; 
+
+ float: left;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ font-size: 17px; 
+}
+
+
+.nav:hover {
+ background-color: #ddd;
+ color: rgb(172, 168, 168);
+}  
+.legend2 {
+ margin-left: 0px !important;
+ color:white;
+ font-size: medium;
+
+ 
+} 

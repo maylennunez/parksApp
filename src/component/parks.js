@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-// import axios from 'axios'
+
+
 class parks extends Component {
-
-
-
-
 
 
     render() {
         return (
             
-            <div>
+            <div class="parks">
                 {this.props.ready ? "" : <h2>Loading...</h2>}
 
-         {this.props.showParks()} 
+                    {this.props.showParks()} 
             </div>
         );
     }

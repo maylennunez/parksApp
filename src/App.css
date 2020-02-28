@@ -39,29 +39,4 @@
 } */
 
 
- nav {
-   display: flex;
-  justify-content: left; 
-   overflow: hidden;
-  background-color: rgb(253, 246, 246);
-  transition: top .4s;
-} 
-
- nav a {
-  
-  color:rgb(105, 103, 103);
-  text-decoration: none ; 
  
-  float: left;
-  /* color: white; */
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px; 
-}
-
-
- .nav:hover {
-  background-color: #ddd;
-  color: rgb(172, 168, 168);
-}  
