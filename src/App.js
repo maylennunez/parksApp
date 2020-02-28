@@ -1,12 +1,12 @@
 
 import './App.css';
-import Home from './component/Home';
+// import Home from './component/Home';
 import React, { Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import axios from 'axios'
 import ParkDetails from './component/parksDetail';
 import Parks from './component/parks';
-import Firstpage from './component/firstPage';
+import Homepage from './component/homePage';
 import Navbar from './component/navBar'
 
 
@@ -39,7 +39,7 @@ class App extends Component {
   makeCarousel = (parks) => {
     let pics = ''
     parks.map(eachPark => {
-      pics += `<div><img src="${eachPark.images[0].url}"/><p className="legend">${eachPark.name}</p></div>`
+      pics += `<div><img src="${eachPark.images[0].url}${parks.name}"/><p className="legend">${eachPark.name}</p></div>`
     })
     console.log(pics, typeof pics)
     this.setState({pics: String(pics)})
@@ -48,9 +48,9 @@ class App extends Component {
   showParks =  () => {
     let parksArr =  this.state.parks.map((eachPark, i) => {
 
-      return <div key={i}>
-        
-    <Link to={`/park/${eachPark.id}`}>{eachPark.name} </Link>
+      return <div className="gallery" key={i} >
+        <img src={eachPark.images[0].url} alt=''style={{height:"300", width:"600"}} />
+    <Link  to={`/park/${eachPark.id}`}><h2>{eachPark.name}</h2> <br/>{eachPark.states} </Link>
         
       </div>
     })
@@ -77,8 +77,8 @@ class App extends Component {
         <Switch>
           <Route exact path="/parks" render={props => <Parks {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready}/>} />
           <Route exact path="/park/:parkdetail" render={props => <ParkDetails {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready}/>} />
-          <Route exact path="/firstPage" render={props => <Firstpage {...props} pics={this.state.parks} />} />
-          <Route exact path="/" render={props => <Home  {...props}/>} />
+          <Route exact path="/" render={props => <Homepage {...props} pics={this.state.parks} />} />
+          {/* <Route exact path="/" render={props => <Home  {...props}/>} /> */}
 
         </Switch>
        

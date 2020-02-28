@@ -16,17 +16,18 @@ class parksDetail extends Component {
         let park = this.props.parks.find(eachPark => {
             return eachPark.id === this.props.match.params.parkdetail
         })
-
-        return (<div>
-            {park && <>
+    
+        return ( <div> {park && <>
+       
            <h1>{park.name}</h1>
-           <h3>{park.states}</h3>
+           <p> {park.states}</p>
            <br/>{park.description}
-           <br/>{park.weatherInfo}
-           <br/>{park.directionsInfo}
+           <h4>Weather:</h4> {park.weatherInfo}
+           <h4>Direction:</h4>{park.directionsInfo}
+           <br/> {this.showImages(park.images)}
+            {/* {park && <> */}
            {/* <br/> <a href={park.directionsUrl}>Plan your Visit</a> */}
            {/* <br/> <img alt= "images" src={park.images[0].url}/> */}
-           <br/> {this.showImages(park.images)}
             </> }
         </div>)
        
