@@ -7,7 +7,7 @@ import ParkDetails from './component/parksDetail';
 import Parks from './component/parks';
 import Homepage from './component/homePage';
 import Navbar from './component/navBar'
-import Events from './component/events';
+import Alerts from './component/alerts';
 
 
 class App extends Component {
@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+
     axios.get(`https://developer.nps.gov/api/v1/parks?parkCode=acad,drto,arch,yell,cany,yose,zion,olym,redw,glac,hale,havo,meve,grca,ever,dena,jotr,brca,blue,bibe,cave,chis,crla,deva,glac,goga,grca,grsm,maca,moru,mora,romo,shen,redw,seki,gett,viis,blri,lavo&fields=images&api_key=XFE9btfYA8WcokTn2LdkBpk6g8fSQmuwDLYgd6Ka`).then(res => {
       console.log(res.data.data)
 
@@ -37,7 +38,7 @@ class App extends Component {
   makeCarousel = (parks) => {
     let pics = ''
     parks.map(eachPark => {
-      pics += `<div><img  src="${eachPark.images[0].url}${parks.name}"/><p className="legend">${eachPark.name}</p></div>`
+      pics += `<div> <img  src="${eachPark.images[0].url}${parks.name}"/> <p className="legend">${eachPark.name}</p></div>`
     })
     console.log(pics, typeof pics)
     this.setState({ pics: String(pics) })
@@ -57,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+   
     return (
 
 
@@ -70,7 +71,7 @@ class App extends Component {
           <Route exact path="/parks" render={props => <Parks {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready} />} />
           <Route exact path="/park/:parkdetail" render={props => <ParkDetails {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready} />} />
           <Route exact path="/" render={props => <Homepage {...props} pics={this.state.parks} />} />
-          <Route exact path="/events" render={props => <Events alerts={this.showAlerts} {...props} />}/>
+          <Route exact path="/alerts" render={props => <Alerts alerts={this.props.showAlerts} {...props} ready={this.state.ready} />}/>
 
         </Switch>
 
