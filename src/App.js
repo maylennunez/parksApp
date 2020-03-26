@@ -7,7 +7,7 @@ import ParkDetails from './component/parksDetail';
 import Parks from './component/parks';
 import Homepage from './component/homePage';
 import Navbar from './component/navBar'
-
+import Events from './component/events';
 
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
   makeCarousel = (parks) => {
     let pics = ''
     parks.map(eachPark => {
-      pics += `<div><img src="${eachPark.images[0].url}${parks.name}"/><p className="legend">${eachPark.name}</p></div>`
+      pics += `<div><img  src="${eachPark.images[0].url}${parks.name}"/><p className="legend">${eachPark.name}</p></div>`
     })
     console.log(pics, typeof pics)
     this.setState({ pics: String(pics) })
@@ -47,7 +47,7 @@ class App extends Component {
     let parksArr = this.state.parks.map((eachPark, i) => {
 
       return <div className="gallery" key={i} >
-        <img src={eachPark.images[0].url} alt='' style={{ height: "300", width: "600" }} />
+        <img src={eachPark.images[0].url} alt='' style={{ height: "400", width: "600" }} />
         <Link to={`/park/${eachPark.id}`}><p>{eachPark.name}</p> <br />{eachPark.states} </Link>
 
       </div>
@@ -70,7 +70,7 @@ class App extends Component {
           <Route exact path="/parks" render={props => <Parks {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready} />} />
           <Route exact path="/park/:parkdetail" render={props => <ParkDetails {...props} showParks={this.showParks} parks={this.state.parks} ready={this.state.ready} />} />
           <Route exact path="/" render={props => <Homepage {...props} pics={this.state.parks} />} />
-    
+          <Route exact path="/events" render={props => <Events alerts={this.showAlerts} {...props} />}/>
 
         </Switch>
 
