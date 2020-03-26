@@ -76,6 +76,7 @@ height: 20vw;
 width: 100%;
 padding: 0px 0;
 }
+
 h2 {
  
   text-align: center;
@@ -111,6 +112,6 @@ nav a {
  margin-left: 0px !important;
  color:white;
  font-size: medium;
-
+ height: 80%;
  
 } 

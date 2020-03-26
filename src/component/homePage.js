@@ -14,9 +14,10 @@ class homePage extends Component {
            
             <Carousel showArrows={true} interval={3000} transitionTime={500} autoPlay={true}> 
                     <div style={{ height: "600", width: "600" }}>  
-                     <img  alt="" src="https://www.nps.gov/common/uploads/structured_data/3C7B45AE-1DD8-B71B-0B7EE131C7DFC2F5.jpg"/>
+                    <img  src="https://www.nps.gov/common/uploads/structured_data/13C2D9FD-1DD8-B71B-0B3C56643E2A396D.jpg"/> <p className="legend"></p>
+                     {/* <img  alt="" src="https://www.nps.gov/common/uploads/structured_data/3C7B45AE-1DD8-B71B-0B7EE131C7DFC2F5.jpg"/> */}
                  <div style={{display: "flex", justifyContent: "center"}}>
-                     <p  style={{width: "50px"}} className="legend2">Acadia, ME</p>
+                     <p  style={{width: "50px"}} className="legend2">Olympic,Acadia, ME</p>
                  </div>
                  </div>
                  <div>
