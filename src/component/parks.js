@@ -7,7 +7,7 @@ class parks extends Component {
     render() {
         return (
             
-            <div class="parks">
+            <div className="parks">
                 {this.props.ready ? "" : <h2>Loading...</h2>}
 
                     {this.props.showParks()} 
